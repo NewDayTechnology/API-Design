@@ -1,6 +1,7 @@
 # API Errors Samples
 
 ## ProblemDetails
+
 `ProblemDetails` is not yet a standard, it has been proposed 5 years ago but potentially will never be ratified as a standard.
 Its aim is to be machine-readable and leverage web technologies like URIs.
 The proposal itself recommend to stick to your existing format instead of adopting ProblemDetails, if you already have one that works for you.
@@ -22,17 +23,33 @@ Note this should not be too fine grained but just provide high level types of er
 ASP.NET Core provide a [ProblemDetails](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.mvc.problemdetails?view=aspnetcore-6.0) class which provide flexibility to have `extensions` or could be extended for different error types.
 One example is [HttpValidationProblemDetails](https://docs.microsoft.com/en-us/dotnet/api/microsoft.aspnetcore.http.httpvalidationproblemdetails?view=aspnetcore-6.0).
 
+Note that by default when it is a built-in logic emitting the error, it will include the `status` field. The `status` field is optional so while there is no need to always populate, it can be present.
+
 ## Register of generic types
 
 | Status | Type | Title | Sample |
 | ------ | ---- | ----- | ------ |
-| 400 Bad Request | newday:generic:error:validation | Your request parameters or fields contain validation errors. | [Validation](#validation) |
+| 400 Bad Request | newday:generic:error:validation | One or more validation errors occurred. | [Validation](#validation) |
 | 404 Not Found | newday:generic:error:missing | The resource requested does not exist. | [Missing](#missing) |
 | 500 Internal Server Error | newday:generic:error:unavailable | Service can't process the request right now. e.g. one of the dependencies is unavailable. | [Unavailable](#unavailable) |
 
 ## Custom types
 
-To define custom types for a particular service or domain, define the URI as `newday:{domain/system}:error:{name}`. e.g.. `newday:kyc:error:authenticationExpired`
+To define custom types for a particular service or domain, define the URI as `newday:{domain/system}:error:{name}`. That type can also define custom fields (extensions).
+
+Example:
+
+```text
+HTTP/1.1 400 Bad Request
+Content-Type: application/problem+json
+```
+
+```json
+{
+    "type": "newday:kyc:error:authenticationInvalid",
+    "remainingAttempts": 3
+}
+```
 
 Avoid defining custom types when not needed. e.g. a call to /document/{id} for the not found scenario doesn't require a custom type or extra info, a 404 provides enough info by itself.
 
@@ -65,6 +82,7 @@ Content-Type: application/problem+json
 ```json
 {
     "type": "newday:generic:error:validation",
+    "title": "One or more validation errors occurred.",
     "errors": {
         "age": [
             "must be a positive integer",

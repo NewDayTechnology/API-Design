@@ -1,0 +1,13 @@
+name: Build
+on:
+  push:
+    branches: [ $default-branch ]
+  pull_request:
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out code
+        uses: actions/checkout@v2
+      - name: Linting
+        uses: DavidAnson/markdownlint-cli2-action@v5

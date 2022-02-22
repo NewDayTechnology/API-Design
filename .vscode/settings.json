@@ -1,6 +1,2 @@
 {
-    "markdownlint.config": {
-        "default": false,
-        "line-length": false
-    }
 }

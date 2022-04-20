@@ -16,4 +16,4 @@ There will inevitably be a series of changes that do not modify the standard - s
 
 ## Questions
 
-Contact David Whitney or Alession Franceschelli
+Contact David Whitney or Alessio Franceschelli.

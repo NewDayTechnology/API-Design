@@ -10,6 +10,7 @@ The intent is to achieve the following:
 * [API Content Structure](#api-content-structure)  
 * [Generic Documentation Guidelines](#generic-documentation-guidelines)
 * [Style Guide](#style-guide)
+* [API Document Format](#api-document-format)
 
 ## API Content Structure
 
@@ -39,8 +40,7 @@ When you are describing the parameters, mention the following details:
 |Parameter Name |Format | Description  |
 |------------------------|-----------|-------------------|  
 | Name | Text| Name of the credit applicant. |
-|Contact Number | String | Include examples, if required. For example: _The contact number must start with '07'; for example, 07458847898._
-  |
+|Contact Number | String | Include examples, if required. For example: _The contact number must start with '07'; for example, 07458847898._|
 
 * **Integration Guide**: Include the following:
   * Versioning
@@ -48,9 +48,11 @@ When you are describing the parameters, mention the following details:
   * Implementation process, if any
   * NewDay Support
 
-For information on API Document format and how you can provide this to the Developer Portal team, refer to <content to be added here>
+For information on the document format that you must follow, refer to [API Document Format](#api-document-format) and how you can provide this to the Developer Portal team, refer to [Document Publication Process]
 
 ## Generic Documentation Guidelines  
+
+---
 
 * **Prepare a content strategy and structure**: This will help you to prepare a skeletal structure of your content. Based on this architecture, prepare logical content sections.
 * **Think about your customer first**: When you write, consider the following questions:  
@@ -105,4 +107,20 @@ Example:
 **Better**: Example, that is
 
 For **abbreviations**, when you are using it for the first time in your content, explain the term. From next time onwards, you can use the abbreviated form.
+
+### Capitalisation
+
+#### Headings
+
+Use sentence case.
+
+Example:
+
+_MultiQuote API in the Acquisition Workflow_
+
+#### API Parameters
+
+Use the same capitalisation as displayed in the API request or response message.  
+
+## API Document Format
 

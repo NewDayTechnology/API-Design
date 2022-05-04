@@ -62,6 +62,7 @@ For information on the document format that you must follow, refer to [API Docum
 * **Keep your sentences short and crisp**: It is often difficult to understand long sentences.
 * **Punctuation is important**: Incorrect or missing punctuation can alter the meaning of your content.
 * **Include a Glossary**: Explain the  terms and their definitions.  
+* **Include meta data and index entries**: Use these to make your content appear at the top of search results.
 
 ## Style Guide
 
@@ -103,7 +104,8 @@ It can be difficult to understand latin phrases. Hence, it is recommended to use
 
 Example:
 
-**Avoid**: e.g, i.e.
+**Avoid**: e.g, i.e.  
+
 **Better**: Example, that is
 
 For **abbreviations**, when you are using it for the first time in your content, explain the term. From next time onwards, you can use the abbreviated form.
@@ -122,5 +124,28 @@ _MultiQuote API in the Acquisition Workflow_
 
 Use the same capitalisation as displayed in the API request or response message.  
 
+### Active versus Passive Voice
+
+Use Active voice in all generic scenarios. However, there might be a few exceptional scenarios, when you have to use Passive voice.
+
+Example:
+
+**Avoid**: The customer has to enter correct credentials.
+
+**Better**: You must enter correct credentials.
+
+### Use of Words
+
+Refrain using any words that may have a subtle indication of the following:
+
+* Hurts any religious sentiment: Do not mention any religion when you are explaining any concept or citing an example.  
+* Gender specific pronouns: Use _they_ instead of _he_ or _she_, if required.
+* Colloquial words: Do not use any colloquial words that are not a part of the British English vocabulory.
+
 ## API Document Format
 
+You are primarily writing two categories of API content:
+
+* User Guides: Write the **Overview** or the **Integration Guide** section in Markdown format.  
+  For information on Markdown cheatsheet, refer to [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet).
+* API Reference: Write the Open API specification in Javascript Object Notification(JSON) format.

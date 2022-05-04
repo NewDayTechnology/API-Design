@@ -1,5 +1,7 @@
 # API Documentation Guidelines
 
+---
+
 The intent is to achieve the following:
 
 * **Simple easy to follow instructions**: The content must be lucid and comprehensible to our customers, including both native and non-native English speakers.  
@@ -51,8 +53,6 @@ When you are describing the parameters, mention the following details:
 For information on the document format that you must follow, refer to [API Document Format](#api-document-format) and how you can provide this to the Developer Portal team, refer to [Document Publication Process]
 
 ## Generic Documentation Guidelines  
-
----
 
 * **Prepare a content strategy and structure**: This will help you to prepare a skeletal structure of your content. Based on this architecture, prepare logical content sections.
 * **Think about your customer first**: When you write, consider the following questions:  

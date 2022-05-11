@@ -1,4 +1,4 @@
-#  Style Guide
+# Style Guide
 
 The aim is to present technical information in a simple manner; it must be writer agnostic.
 
@@ -30,7 +30,7 @@ The company standard is to use British English.
 
 Example:
 
-Use _Authorisation_ and **not** _Authorization_  
+Use *Authorisation* and **not** *Authorization*  
 
 ## Avoid Latin Phrases and Abbreviations
 
@@ -92,6 +92,61 @@ Example:
 
 Use numbered lists when the items have a sequential order.
 
+Example:
+
+1. Log in to your account with your credentials.
+2. Click the **My Profile** tab.
+3. Check and edit your information, as required.
+
 ### Nesting inside List Items
 
+Based on your requirement, you may include the following under a list (bulleted or numbered):
+
+* Code blocks  
+* Images
+* Note/ALerts/Disclaimers  
+* Second level bulleted or numbered list
+
+Items within the nested list must align with the first character of the list item.
+
+Example:
+
+1. In Jira, raise a ticket in the backlog. Mention the following in the ticket:  
+    * Summary
+    * Description  
+    * Acceptance criteria
+2. Assign the reviewer.
+3. Incorporate the comments.
+
 ### Punctuation
+
+Missing or incorrect punctuation alter the meaning of your sentences. Consider the following:
+
+* Add comma (`,`) in the following scenarios:  
+  * When you are mentioning a number of items.
+
+    Example:  Mango, apple, banana, and grapes.
+  
+  * When you mention the following:  
+    * However
+    * Hence
+    * Therefore
+
+  * When you want a short pause in your sentence:  
+
+    Example:
+
+    If it is raining, the school will finish early.
+
+* Add semicolon (`;`) when you are writing a complete sentence and it is related to the previous sentence.
+
+  Example:
+
+  The weather is lovely; it is neither too sunny nor too windy.
+
+* Add full stop (`.) at the end of a complete sentence.
+
+  Example:
+
+  After the request is received, it takes about 5 seconds to return a response.
+  

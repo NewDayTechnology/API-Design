@@ -4,7 +4,7 @@
 
 ## ProblemDetails
 
-`ProblemDetails` is not yet a standard, it has been proposed 5 years ago but potentially will never be ratified as a standard.
+`ProblemDetails` is not yet a standard, it was proposed in 2016 in [RFC 7807 "Problem Details for HTTP APIs"](https://datatracker.ietf.org/doc/html/rfc7807) but potentially will never be ratified as a standard.
 
 Its aim is to be machine-readable and leverage web technologies like URIs.
 The proposal itself recommend to stick to your existing format instead of adopting ProblemDetails, if you already have one that works for you.
@@ -12,6 +12,8 @@ The proposal itself recommend to stick to your existing format instead of adopti
 Given we don't currently have an existing internal standard, we should adopt this proposed standard format instead of trying to craft our own.
 
 It is also widely adopted by web frameworks, including ASP.NET Core.
+
+You can see some [examples of ProblemDetails in action here](https://kumarashwinhubert.com/problem-details-the-right-way-to-specify-errors-in-web-api-responses).
 
 ## Types
 

@@ -12,4 +12,4 @@
 - We utilise spec-driven development; Open API 3.x
 - We understand that versioning is not an excuse for poor design
 - We incorporate this guides best practices
-- We fully understand [REST constraints](reference/RestConstraints.md)
+- We fully understand [REST constraints](/reference/RestConstraints.md)

@@ -1,24 +1,38 @@
 # Document Publication Guidelines
 
-Refer to the following process, once your API content is ready for review:
+The publication process has two stages:
 
-1. Upload your markdown and Open API files to the Github respository:
-https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content
+1. Insert flags in the content files to determine the specific Developer Portal environment where you want to publish them.
+2. Upload them to the Github repository for the Developer Portal team to consume the content.
 
-    * Create a separate branch with your team name.
-    * Upload three folders:
-      * **Introduction**: Contains the API overview information.
-      * **API Reference**: Contains the Open API file.
-      * **Integration**: Contains the API integration information.
-2. Raise a pull request and assign Deb Dutta Das (Github user name: @DebDutta171989) as a reviewer.
+## Insert Publication Flags
 
-    **Note**: The content is reviewed as per the documentation guidelines.
-3. Incorporate the comments.  
-4. Deb Dutta Das approves the content.
-5. Merge your branch with the **main** branch.
-6. In Atlassian Jira, raise a ticket in the [Developer Portal backlog](https://newdaycards.atlassian.net/jira/software/c/projects/DEVPORT/boards/1169).
-7. Mention the following flags in both the (**User Guides** and **API Reference**) document types:  
+Follow the instructions to insert flags in the API content:
 
-   * `PublicationReady`: Specify this to publish the document in the **production environment**. If this flag is absent, the document is published in the **User Acceptance Testing (UAT)** environment.  
- 
-   * `ForExternalPublication`: Specify this to publish the document in the **external** Developer Portal site. If this flag is absent, the document is published in the **internal** Developer Portal site.
+* In a markdown file, mention the following before Heading 1:  
+
+![Publication Flags](Flags.PNG)
+
+* If `PublicationReady` is set to **True**, the content will be published in the production environment of the Developer Portal. Otherwise, if the value is set to **False**, the content is ported to the User Acceptance Environment.  
+
+* If `ForExternalPublication` is set to **True**, the content is ported to the external Developer Portal site. Otherwise, if the value is set to **False**, the content is published to the internal site.
+
+## Push Content to Github Repository
+
+The [Github Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) is structured in the following manner:  
+
+![Github Repository Structure](./Github%20Repository%20Structure.png "Github Repository Structure")
+
+Follow the instructions, once your API content is ready for review:
+
+1. Create a separate branch with your API product name.
+2. Upload the following files to the `apiContent` folder:
+
+    * **Introduction.md**: The markdown file containing the API overview information.
+    * **API Reference**: Contains the OpenAPI(swagger) file.
+
+3. Raise a pull request and assign Deb Dutta Das and David Whitney as reviewers.  
+4. Incorporate the comments.  
+5. Merge the branch with the main branch.
+6. Deb Dutta Das or David Whitney approves the content.  
+  The content is imported to the Developer Portal during the next deployment.

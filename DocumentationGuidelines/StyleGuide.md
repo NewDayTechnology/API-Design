@@ -1,8 +1,8 @@
 # Style Guide
 
-The aim is to present technical information in a simple manner; it must be writer agnostic.
+The aim is to present technical information in a simple manner; it must present a consistent writing style.
 
-To achieve a consistent writing style, we recommend you to refer to the following guidelines. However, there could be deviations when you might have to explain difficult concepts in a different way.
+To achieve this, we recommend you to refer to the following guidelines. However, there could be deviations when you might have to explain difficult concepts in a different way.
 
 ## Avoid Ambigous Language
 
@@ -144,7 +144,7 @@ Missing or incorrect punctuation alter the meaning of your sentences. Consider t
 
   The weather is lovely; it is neither too sunny nor too windy.
 
-* Add full stop (`.) at the end of a complete sentence.
+* Add full stop (`.`) at the end of a complete sentence.
 
   Example:
 

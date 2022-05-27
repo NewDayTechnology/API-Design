@@ -11,7 +11,7 @@ Organise your API content into the following broad categories:
 
     You may include more relevant sections in the **Introduction** as applicable to your API.
 
-    * **API Reference**: Include the following in the OpenAPI (swagger) file. The structure is based on the Open API Specification version 3.0:  
+* **API Reference**: Include the following in the OpenAPI (swagger) file. The structure is based on the Open API Specification version 3.0:  
   * Path  
   * Request parameters
   * Sample request message

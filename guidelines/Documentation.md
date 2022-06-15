@@ -122,6 +122,8 @@ ForExternalPublication: true
 The `Xyz` API is a...
 ```
 
+> Note: For publishing API documentation to the external Developer Portal site, set the `pub-ready` value to `false`. This allows the Developer Portal team to publish the API content in the UAT environment and review stylistic issues. If it is good to go, the technical author will modify the `pub-ready` value to `true`. During the next scheduled deployment, the content will be published in the production environment.
+
 ### Opening a PR to the Content Repository
 
 The Developer Portal ingests content from the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content).

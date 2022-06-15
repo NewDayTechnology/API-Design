@@ -107,7 +107,7 @@ This file contains front-matter
 
 Our publication process requires two values:
 
-- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will be publish the content to the `production` environments, while **false** will publish it to the `UAT`.
+- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `production` environments, while **false** will publish it to the `UAT`.
 - `external-use` - This is a boolean value that indicates whether the content should be available on the **public** or **internal** portal.
 
 For a publicly accessible API, your `markdown` doc should look like this:

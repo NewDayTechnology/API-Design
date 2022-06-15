@@ -128,7 +128,8 @@ Include the following in the OpenAPI specification:
 
 ```JSON
 {"pub-ready": true
-"external-use": true}
+"external-use": true
+}
 ```
 
 - If `pub-ready` is set to **true**, the file is published to the production environment; whereas, **false** will publish it to the UAT environment.

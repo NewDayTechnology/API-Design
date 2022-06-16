@@ -127,8 +127,9 @@ The `Xyz` API is a...
 Include the following in the OpenAPI specification:
 
 ```JSON
-{"pub-ready": true
-"external-use": true
+{
+  "pub-ready": "true",
+  "external-use": "true"
 }
 ```
 

@@ -88,8 +88,9 @@ When you are describing the parameters, you must include at least the parameter 
 
 Documentation publication relies on adding `front matter` to your `markdown` files. To add your teams `APIs` into the portal, you need to:
 
-1. Add the correct `Publication Front Matter`
-2. Open a `PR` to the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) with your `markdown` and `Open API Spec` files.
+1. Add the correct `Publication Front Matter`.
+2. Add values to the OpenAPI specification.
+3. Open a `PR` to the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) with your `markdown` and `Open API Spec` files.
 
 ### Adding Publication Front Matter
 

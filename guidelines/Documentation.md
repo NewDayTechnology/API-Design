@@ -129,8 +129,12 @@ Include the following in the OpenAPI specification:
 
 ```JSON
 {
-  "pub-ready": "true",
-  "external-use": "true"
+  [ ... ]
+  "x-pub-settings": {
+    "pub-ready": "true",
+    "external-use": "true"
+  }
+  [ ... ]
 }
 ```
 

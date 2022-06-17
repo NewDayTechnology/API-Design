@@ -142,9 +142,12 @@ Include the following in the OpenAPI specification:
 
 - If `external-use` is set to **true**, the file is published to the public Developer Portal; whereas, **false** will publish it to the internal portal.
 
-The following image represents how the value settings determine the content visibility:
+The following table represents how the value settings determine the content visibility:
 
-![Publication Settings](./Publication%20Settings.png)
+|      |external-use: false|external-use: true|  
+|------|------|-----
+|pub-ready: false| Internal dev/staging| Internal dev/staging<br>External dev/staging|
+|pub-ready: true| Internal dev/staging<br>Internal UAT/prod| Internal dev/staging<br>Internal UAT/prod<br>External dev/staging<br>External UAT/prod|
 
 ### Opening a PR to the Content Repository
 

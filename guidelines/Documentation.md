@@ -108,7 +108,7 @@ This file contains front-matter
 
 Our publication process requires two values:
 
-- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `production` environments, while **false** will publish it to the `UAT`.
+- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `UAT` environment, while **false** will publish to the `staging` environment.
 - `external-use` - This is a boolean value that indicates whether the content should be available on the **public** or **internal** portal.
 
 For a publicly accessible API, your `markdown` doc should look like this:
@@ -138,16 +138,13 @@ Include the following in the OpenAPI specification:
 }
 ```
 
-- If `pub-ready` is set to **true**, the file is published to the production environment; whereas, **false** will publish it to the UAT environment.
+- If `pub-ready` is set to **true**, the file is published to the UAT environment. If **false**, will publish to the staging environment.
 
 - If `external-use` is set to **true**, the file is published to the public Developer Portal; whereas, **false** will publish it to the internal portal.
 
 The following image represents how the value settings determine the content visibility:
 
 ![Publication Settings](./Publication%20Settings.png)
-
-
-> Note: For publishing API documentation to the external Developer Portal site, set the `pub-ready` value to `false`. This allows the Developer Portal team to publish the API content in the UAT environment and review stylistic issues. If it is good to go, the technical author will modify the `pub-ready` value to `true`. During the next scheduled deployment, the content will be published in the production environment.
 
 ### Opening a PR to the Content Repository
 

@@ -88,8 +88,9 @@ When you are describing the parameters, you must include at least the parameter 
 
 Documentation publication relies on adding `front matter` to your `markdown` files. To add your teams `APIs` into the portal, you need to:
 
-1. Add the correct `Publication Front Matter`
-2. Open a `PR` to the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) with your `markdown` and `Open API Spec` files.
+1. Add the correct `Publication Front Matter`.
+2. Add values to the OpenAPI specification.
+3. Open a `PR` to the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) with your `markdown` and `Open API Spec` files.
 
 ### Adding Publication Front Matter
 
@@ -107,22 +108,46 @@ This file contains front-matter
 
 Our publication process requires two values:
 
-- `PublicationReady` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will be published into `production` environments, while **false** will be published to `UAT`.
-- `ForExternalPublication` - This is a boolean value that indicates whether the content should be available on the **public** or **internal** portal.
+- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `UAT` environment, while **false** will publish to the `staging` environment.
+- `external-use` - This is a boolean value that indicates whether the content should be available on the **public** or **internal** portal.
 
 For a publicly accessible API, your `markdown` doc should look like this:
 
 ```md
 ---
-PublicationReady: true
-ForExternalPublication: true
+pub-ready: true
+external-use: true
 ---
 # Xyz API
 
 The `Xyz` API is a...
 ```
 
-> Note: For publishing API documentation to the external Developer Portal site, set the `pub-ready` value to `false`. This allows the Developer Portal team to publish the API content in the UAT environment and review stylistic issues. If it is good to go, the technical author will modify the `pub-ready` value to `true`. During the next scheduled deployment, the content will be published in the production environment.
+### Adding Values to OpenAPI Specification
+
+Include the following in the OpenAPI specification:
+
+```JSON
+{
+  [ ... ]
+  "x-pub-settings": {
+    "pub-ready": "true",
+    "external-use": "true"
+  }
+  [ ... ]
+}
+```
+
+- If `pub-ready` is set to **true**, the file is published to the UAT environment. If **false**, will publish to the staging environment.
+
+- If `external-use` is set to **true**, the file is published to the public Developer Portal; whereas, **false** will publish it to the internal portal.
+
+The following table represents how the value settings determine the content visibility:
+
+|      |external-use: false|external-use: true|  
+|------|------|-----
+|pub-ready: false| Internal dev/staging| Internal dev/staging<br>External dev/staging|
+|pub-ready: true| Internal dev/staging<br>Internal UAT/prod| Internal dev/staging<br>Internal UAT/prod<br>External dev/staging<br>External UAT/prod|
 
 ### Opening a PR to the Content Repository
 

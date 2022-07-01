@@ -1,4 +1,4 @@
-# URLs, Verbs, and Response Codes
+# URLs and Verbs
 
 ---
 
@@ -111,6 +111,8 @@ The available verbs are listed in the RFC 261 specification in section 9.1.2.
 Operations MUST use the proper HTTP methods whenever possible, and operation idempotency MUST be respected.
 
 Borrowed from [Microsoft REST API fundamentals](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#74-supported-methods), the following should be respected:
+
+For response/status codes see: [guidelines/StatusCodes.md](../guidelines/StatusCodes.md)
 
 Method  | Description                                                                                                                | Is Idempotent
 ------- | -------------------------------------------------------------------------------------------------------------------------- | -------------

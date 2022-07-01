@@ -6,7 +6,7 @@ var mdDocs = [
     "reference/MaturityModel.md",
     "reference/DesignPrinciples.md",
     "reference/RestConstraints.md",
-    "standards/UrlsVerbsAndResponseCodes.md",
+    "standards/UrlsAndVerbs.md",
     "standards/Versioning.md",
     "standards/Security.md",
     "standards/MandatoryEndpoints.md",

@@ -54,7 +54,7 @@ There's repeated confusion around the terms "API" and "Endpoint" when we're talk
 
 The following categories describe our requirements for API design. **It is expected you follow the approach outlined in each sub-section**.
 
-- [Urls, Verbs, and Response Codes](standards/UrlsVerbsAndResponseCodes.md)
+- [Urls, Verbs](standards/UrlsAndVerbs.md)
 - [Versioning](standards/Versioning.md)
 - [Security](standards/Security.md)
 - [PCI Data](standards/PCIData.md)

@@ -19,6 +19,7 @@ Services SHOULD use verbose naming patterns and SHOULD NOT use abbreviations oth
 - Acronyms **SHOULD** follow the casing conventions as though they were regular words (e.g. Url).
 - All identifiers including namespaces, entityTypes, entitySets, properties, actions, functions and enumeration values **SHOULD** use lowerCamelCase.
 - HTTP headers are the exception and **SHOULD** use standard HTTP convention of Capitalized-Hyphenated-Terms.
+  - x-prefixed header names **MUST** be avoided [see RFC for ref](https://datatracker.ietf.org/doc/html/rfc6648)
 
 ## Names to avoid
 

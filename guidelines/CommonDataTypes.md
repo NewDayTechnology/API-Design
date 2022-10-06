@@ -10,23 +10,24 @@ For data types that repeat across many APIs we want a consistent approach to rep
 * Services **SHOULD** represent the amount as a number, to avoid string parsing and to allow the deserialisers to deserialise directly into the native representation (e.g. decimal in .NET).
 
 Examples
-
-    {
-	    ...,
-	    "paymentCard": "1234567890123456",
-	    "amount": {
-            "currency": "GBP",
-            "value": 123.45
-        }
+```json
+{
+    "paymentCard": "1234567890123456",
+    "amount": {
+        "currency": "GBP",
+        "value": 123.45
     }
+}
+```
 
-    {
-	    ...,
-	    "balance": 1234.33,
-	    "requestedPayment": 10,
-	    "recommendedPayment": 100,
-	    "interestAccrued": 12.88,
-	    "currency": "GBP"
-    }
+```json
+{
+    "balance": 1234.33,
+    "requestedPayment": 10,
+    "recommendedPayment": 100,
+    "interestAccrued": 12.88,
+    "currency": "GBP"
+}
+```
 
 ---

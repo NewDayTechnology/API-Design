@@ -1,6 +1,6 @@
 # Common Data Type Guidelines
 
-For data types that repeat across many APIs we want a consistent approach to represent the data to avoid any misinterpretation of the data and/or conversion errors.
+For data types that repeat across many APIs we want a consistent approach to represent the data to avoid any misinterpretation of the data or conversion errors.
 
 ### Money
 

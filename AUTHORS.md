@@ -2,7 +2,7 @@
 
 - Joe Walters
 - Adeel Qureshi
-- Alession Franceschelli
+- Alessio Franceschelli
 - Rob Cooper
 - Andy Howell
 - Michael Meaney

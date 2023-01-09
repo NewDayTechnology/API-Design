@@ -8,7 +8,7 @@ These endpoints are all required to be implemented by all APIs.They are internal
 
 ### Heart Beat
 
-Each API **MUST** have a heart beat `GET` endpoint at `/heartbeat` that returns a `200 OK` or `204 No Content` response. This is only concerned with availability, and not downstream depenedencies.
+Each API **MUST** have a heart beat `GET` endpoint at `/heartbeat` that returns a `200 OK` or `204 No Content` response. This is only concerned with availability, and not downstream dependencies.
 
 ### Health Check
 

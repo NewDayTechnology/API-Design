@@ -6,9 +6,13 @@ When defining status codes, look at the API from a consumer perspective and thin
 
 The status codes should not necessarily reflect the outcome of underlying operation and should not be driven based on observability goals.
 
-Also only standard status codes should be used, using status codes in the wrong context (e.g. protocol specific ones like 422) or with the wrong semantic is both surprising and usually problematic for consumers (it can break client libraries, monitoring, proxies and so on).
+Also only standard status codes should be used, according to [RFC9110](https://www.rfc-editor.org/rfc/rfc9110.html). Status codes in the wrong context or with the wrong semantic is both surprising and usually problematic for consumers (it can break client libraries, monitoring, proxies and so on).
 
-Status codes should be more specific where possible.
+Status codes should be more specific where possible, however **we must not repurpose response codes for other purposes than originally intended** (e.g., don't use WebDAV extensions where a 500 would suffice).
+
+
+
+### Common status codes
 
 | Status | Use case |
 | ------ | -------- |
@@ -20,12 +24,3 @@ Status codes should be more specific where possible.
 | 500 | The service can not handle the request. It doesn't matter if the service itself is broken, or one of the core dependency is not available. From the consumer point of view, what matters is that the request can not be fulfilled at the moment and they should retry later. There are other errors that more specifically define unavailability (502,3,4) but those are generally used by proxies/gateway (like APIM in our case) when they can't reach the backend. |
 
 _One high level categorization that usually help with error is that 5XX and 408 (request timeout) are transient, as in the consumer should try to submit the same request later. All the other errors are not, there is no point sending the same request again._
-
-
----
-
-Each request to the API should respond with the appropriate HTTP response code as defined in RFC 2616 Section 10:
-
-[RFC 2616 - Hypertext Transfer Protocol -- HTTP/1.1](https://datatracker.ietf.org/doc/html/rfc2616#section-10)
-
-**We must not repurpose response codes for other purposes than originally intended**. (e.g. don't use WebDAV extensions where a 500 would suffice.)

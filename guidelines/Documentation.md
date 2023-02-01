@@ -156,7 +156,7 @@ Below is a representation of the folder structure of the repo:
 └── footer                   # Footer Content - Reserved for the Devportal team
 ```
 
-The following table represents determine the content visibility based on its variables:
+The following table represents the content visibility based on its variables:
 
 |      |internal folder|external folder|  
 |------|------|-----

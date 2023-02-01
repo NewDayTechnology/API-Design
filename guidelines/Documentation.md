@@ -109,14 +109,12 @@ This file contains front-matter
 Our publication process requires two values:
 
 - `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `UAT` environment, while **false** will publish to the `staging` environment.
-- `external-use` - This is a boolean value that indicates whether the content should be available on the **public** or **internal** portal.
 
 For a publicly accessible API, your `markdown` doc should look like this:
 
 ```md
 ---
 pub-ready: true
-external-use: true
 ---
 # Xyz API
 
@@ -131,8 +129,7 @@ Include the following in the OpenAPI specification:
 {
   [ ... ]
   "x-pub-settings": {
-    "pub-ready": "true",
-    "external-use": "true"
+    "pub-ready": "true"
   }
   [ ... ]
 }
@@ -140,23 +137,36 @@ Include the following in the OpenAPI specification:
 
 - If `pub-ready` is set to **true**, the file is published to the UAT environment. If **false**, will publish to the staging environment.
 
-- If `external-use` is set to **true**, the file is published to the public Developer Portal; whereas, **false** will publish it to the internal portal.
+### Opening a PR to the Content Repository
 
-The following table represents how the value settings determine the content visibility:
+The Developer Portal ingests content from the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content).
+It contains two folders that are of note, `internal` and `external`. Depending whether or not your API is public, choose the folder accordingly. Under both of these there is a `api` folder and a `editorial` folder; your API should be uploaded to the `api` folder.
 
-|      |external-use: false|external-use: true|  
+Below is a representation of the folder structure of the repo:
+
+```
+.
+├── internal
+│   ├── api                  # Internal API Content
+│   └── editorial            # External Editorial Content - Reserved for the Devportal team
+├── external
+│   ├── api                  # External API Content
+│   └── editorial            # External Editorial Content - Reserved for the Devportal team
+├── resources                # Under Left Navbar Content - Reserved for the Devportal team
+└── footer                   # Footer Content - Reserved for the Devportal team
+```
+
+The following table represents determine the content visibility based on its variables:
+
+|      |internal folder|external folder|  
 |------|------|-----
 |pub-ready: false| Internal dev/staging| Internal dev/staging<br>External dev/staging|
 |pub-ready: true| Internal dev/staging<br>Internal UAT/prod| Internal dev/staging<br>Internal UAT/prod<br>External dev/staging<br>External UAT/prod|
 
-### Opening a PR to the Content Repository
-
-The Developer Portal ingests content from the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content).
-
-In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `apiContent` directory.
+In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
 
 1. Fork and clone the repository.
-2. Create a directory under `apiContent` for your `API`.
+2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your `API`.
 3. Add your `index.md` documentation file.
 4. Add your `openapi.json` file.
 5. Open a pull request adding **Deb Dutta Das** and **David Whitney** as reviewers.

@@ -77,7 +77,7 @@ In addition to the style guide, consider the following when writing:
 
 Your spec file should be OpenAPI 3.0 and include the following properties:
 
-- opertationId to identify the endpoint e.g. createAccount
+- operationId to identify the endpoint e.g. createAccount
 - Logical order of API endpoints with healthCheck and heartBeat at the bottom of the specification
 - API summary and description for each endpoint
 - Parameter descriptions

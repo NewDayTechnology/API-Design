@@ -73,6 +73,7 @@ These are a set of recommendations for solving common problems in API design. We
 - [Errors: ProblemDetails](guidelines/ProblemDetails.md)
 - [Collections and Pagination](guidelines/Collections.md)
 - [Naming](guidelines/Naming.md)
+- [Common Data Types](guidelines/CommonDataTypes.md)
 - [New API Checklist](guidelines/NewAPIChecklist.md)
 
 ## Documentation Guidelines

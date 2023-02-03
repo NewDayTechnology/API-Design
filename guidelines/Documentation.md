@@ -35,7 +35,7 @@ This **introduction** should include the following:
 - Who the intended users are
 - What scenarios you would use this API in
 - Any Prerequisites
-- Definition and/or explanation of any terms which users may not be familiar with
+- Definition and/or explanation of terms which users may not be familiar with
 - Any useful diagrams:
   - **(Optional)** Sequence Diagram explaining any particular sequencing of API calls across multiple endpoints.
   - **(Optional)** Context Diagram - e.g. how the MultiQuote API fits into the context of aggregators acquisition process.
@@ -63,6 +63,7 @@ In addition to the style guide, consider the following when writing:
   - Why will they read this content?
   - Does your documentation answer the most commonly asked questions?
   - How long did it take to find the information they are looking for?
+  - Will the reader have an understanding of the Product/API after reading this?
 
 - **Write an essay plan**: It's easier to write an outline of your documentation first, and then revise it over subsequent drafts, expanding on your points. This will improve the flow of the content.
 

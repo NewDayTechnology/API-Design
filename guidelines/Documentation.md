@@ -136,7 +136,7 @@ The `Xyz` API is a...
 
 ### Adding Values and Filters to OpenAPI Specification 
 
-APIs can now be filtered in the parsing logic. The filters we currently have for internal and external can be found [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant filter to this file with your PR.
+APIs can now be filtered in the parsing logic. The filters we currently have for internal and external can be found, [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant filter to this file with your PR.
 
 Include the following in the OpenAPI specification:
 

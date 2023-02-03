@@ -35,6 +35,7 @@ This **introduction** should include the following:
 - Who the intended users are
 - What scenarios you would use this API in
 - Any Prerequisites
+- Definition and/or explanation of any terms which users may not be familiar with
 - Any useful diagrams:
   - **(Optional)** Sequence Diagram explaining any particular sequencing of API calls across multiple endpoints.
   - **(Optional)** Context Diagram - e.g. how the MultiQuote API fits into the context of aggregators acquisition process.
@@ -43,7 +44,14 @@ You can (obviously!) include any additional information as applicable.
 
 Write the content in any editor that supports Markdown format. If you need additional guidance on Markdown, please refer to the [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet).
 
-Provide this file as `index.md`.
+For a product page, please create a file in either internal/editorial or external/editorial, depending if your product is internal or external, with the following naming convention:
+
+- Product: `product-name.md` e.g. `acquiring-new-customers.md`
+
+For an API overview page, please create a file in either internal/api/your-product-folder or external/api/your-product-folder, depending if your product is internal or external, with the following naming convention:
+
+- One API Overview: `overview.md` 
+- Multiple API Overview pages (each endpoint requiring a page): `endpoint-name.md` e.g. `multi-quote.md`
 
 ### Writing Style
 
@@ -66,8 +74,13 @@ In addition to the style guide, consider the following when writing:
 
 ## OpenAPI spec files
 
-Your spec file should be OpenAPI 3.0 and incluse at least the following properties:
+Your spec file should be OpenAPI 3.0 and include the following properties:
 
+- opertationId to identify the endpoint e.g. createAccount
+- Logical order of API endpoints with healthCheck and heartBeat at the bottom of the specification
+- API summary and description for each endpoint
+- Parameter descriptions
+- Enum descriptions
 - The path and any required query parameters
 - Example requests
 - Example responses
@@ -166,8 +179,8 @@ The following table represents the content visibility based on its variables:
 In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
 
 1. Fork and clone the repository.
-2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your `API`.
-3. Add your `index.md` documentation file.
-4. Add your `openapi.json` file.
+2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your API.
+3. Add your product/API Overview documentation file.
+4. Add your `api.json` file.
 5. Open a pull request adding **Deb Dutta Das** and **David Whitney** as reviewers.
 6. Content will be revised and merged through discussion on the PR.

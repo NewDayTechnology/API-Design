@@ -3,6 +3,7 @@
 ---
 
 Internal portal: https://internal-docs.newdaytechnology.net/
+
 External portal: https://docs.newdaytechnology.co.uk/
 
 These are our guidelines for writing API documentation.

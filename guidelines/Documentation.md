@@ -50,7 +50,7 @@ For a product page, please create a file in either internal/editorial or externa
 
 For an API overview page, please create a file in either internal/api/your-product-folder or external/api/your-product-folder, depending if your product is internal or external, with the following naming convention:
 
-- One API Overview: `overview.md` 
+- One API Overview: `api-overview.md` 
 - Multiple API Overview pages (each endpoint requiring a page): `endpoint-name.md` e.g. `multi-quote.md`
 
 ### Writing Style
@@ -134,7 +134,9 @@ pub-ready: true
 The `Xyz` API is a...
 ```
 
-### Adding Values to OpenAPI Specification
+### Adding Values and Filters to OpenAPI Specification 
+
+APIs can now be filtered in the parsing logic. The filters we currently have for internal and external can be found [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant filter to this file with your PR.
 
 Include the following in the OpenAPI specification:
 
@@ -142,7 +144,8 @@ Include the following in the OpenAPI specification:
 {
   [ ... ]
   "x-pub-settings": {
-    "pub-ready": "true"
+    "pub-ready": "true",
+    "tags": [ "identity", "retailers"]
   }
   [ ... ]
 }
@@ -176,11 +179,24 @@ The following table represents the content visibility based on its variables:
 |pub-ready: false| Internal dev/staging| Internal dev/staging<br>External dev/staging|
 |pub-ready: true| Internal dev/staging<br>Internal UAT/prod| Internal dev/staging<br>Internal UAT/prod<br>External dev/staging<br>External UAT/prod|
 
+### API or API Overview
+
 In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
 
 1. Fork and clone the repository.
 2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your API.
-3. Add your product/API Overview documentation file.
-4. Add your `api.json` file.
-5. Open a pull request adding **Deb Dutta Das** and **David Whitney** as reviewers.
+3. Add your API/API Overview documentation file.
+4. Add your `api.json`/`api-overview.md` file.
+5. Open a pull request adding **Megan Jackson** and **David Whitney** as reviewers.
+6. Content will be revised and merged through discussion on the PR.
+
+### Product page
+
+In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
+
+1. Fork and clone the repository.
+2. Create a directory in the `editorial` folder of the selected environment (`internal`/`external`) for your product page.
+3. Add your product documentation file.
+4. Add your `product-name.md` file.
+5. Open a pull request adding **Megan Jackson** and **David Whitney** as reviewers.
 6. Content will be revised and merged through discussion on the PR.

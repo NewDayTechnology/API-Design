@@ -8,7 +8,7 @@ What change is implemented / requirements met in this pull request?
 
 ### Value
 
-<!-- Why is this change valueable -->
+<!-- Why is this change valuable -->
 
 ### Applicable Issues
 

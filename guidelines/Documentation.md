@@ -1,6 +1,9 @@
-# API Documentation Guidelines
+# API Documentation Guidelines for the Developer Portal
 
 ---
+
+Internal portal: https://internal-docs.newdaytechnology.net/
+External portal: https://docs.newdaytechnology.co.uk/
 
 These are our guidelines for writing API documentation.
 It's important that our docs are **simple**, **easy to follow**, and **consistent**.
@@ -137,7 +140,7 @@ The `Xyz` API is a...
 
 ### Adding Values and Filters to OpenAPI Specification 
 
-APIs can now be filtered in the parsing logic. The filters we currently have for internal and external can be found, [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant filter to this file with your PR.
+APIs can now be filtered in the parsing logic using tags. The tags we currently have for internal and external can be found, [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant tag to this file with your PR.
 
 Include the following in the OpenAPI specification:
 
@@ -186,9 +189,8 @@ In order to publish your documentation, you'll need to open a pull request. You 
 
 1. Fork and clone the repository.
 2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your API.
-3. Add your API/API Overview documentation file.
 4. Add your `api.json`/`api-overview.md` file.
-5. Open a pull request adding **Megan Jackson** and **David Whitney** as reviewers.
+5. Open a pull request adding **Megan Jackson** and **David Benson** as reviewers.
 6. Content will be revised and merged through discussion on the PR.
 
 ### Product page
@@ -197,7 +199,6 @@ In order to publish your documentation, you'll need to open a pull request. You 
 
 1. Fork and clone the repository.
 2. Create a directory in the `editorial` folder of the selected environment (`internal`/`external`) for your product page.
-3. Add your product documentation file.
 4. Add your `product-name.md` file.
-5. Open a pull request adding **Megan Jackson** and **David Whitney** as reviewers.
+5. Open a pull request adding **Megan Jackson** and **David Benson** as reviewers.
 6. Content will be revised and merged through discussion on the PR.

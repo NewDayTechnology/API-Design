@@ -190,7 +190,7 @@ In order to publish your documentation, you'll need to open a pull request. You 
 
 1. Fork and clone the repository.
 2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your API.
-4. Add your `api.json`/`index.md` file.
+4. Add your `spec.json`/`index.md` file.
 5. Open a pull request adding **Megan Jackson** and **David Benson** as reviewers.
 6. Content will be revised and merged through discussion on the PR.
 

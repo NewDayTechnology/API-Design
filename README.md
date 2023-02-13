@@ -82,6 +82,6 @@ Please read the [Documentation Guidelines](guidelines/Documentation.md) to under
 
 ## Contributing
 
-See the [contributing guidelines](CONTRIBUTING.md).
+See the [contributing guidelines](.github/CONTRIBUTING.md).
 
 [A list of authors and contributors is avilable here](AUTHORS.md).

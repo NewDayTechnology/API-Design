@@ -34,14 +34,14 @@ Examples
 
 Some APIs may present customer friendly strings of text that can be presented on the front end. These strings may have variable content within them from other parts of the API response.
 
-* Services **MUST** represent these parameters with a single set of curly braces within the string. For example, `"{paymentDate}"`
-* Services **MUST** follow other standards when they apply, including the money example above. Formatting of the currency symbol or it's location ahead or after the value **MUST NOT** be sent from the service. E.g. `"Make a payment of {payment}"` instead of `"Make a payment of {paymentCurrency} {payment}"`.
+* Services **MUST** represent these parameters with a single dollar symbol followed by a set of curly braces within the string. For example, `"${paymentDate}"`
+* Services **MUST** follow other standards when they apply, including the money example above. Formatting of the currency symbol or it's location ahead or after the value **MUST NOT** be sent from the service. E.g. `"Make a payment of ${payment}"` instead of `"Make a payment of ${paymentCurrency} ${payment}"`.
 * Services **SHOULD** use the ubiquitous name of the value for the variable, where possible. This may not always be possible due to the above point with currency and payment.
 
 Examples
 ```json
 {
-    "callToAction": "Make a payment of {payment}",
+    "callToAction": "Make a payment of ${payment}",
     "payment": {
         "currency": "GBP",
         "value": 20.0
@@ -51,7 +51,7 @@ Examples
 
 ```json
 {
-    "reason": "Lenders see customers who made a transaction after {startAt} higher risk.",
+    "reason": "Lenders see customers who made a transaction after ${startAt} higher risk.",
     "startAt": "2023-03-21T15:15:27+00:00",
 }
 ```

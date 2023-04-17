@@ -51,7 +51,7 @@ Examples
 
 ```json
 {
-    "reason": "Lenders see customers who made a transaction after {startAt} higher risk. ",
+    "reason": "Lenders see customers who made a transaction after {startAt} higher risk.",
     "startAt": "2023-03-21T15:15:27+00:00",
 }
 ```

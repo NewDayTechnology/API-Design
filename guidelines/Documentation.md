@@ -201,5 +201,5 @@ In order to publish your documentation, you'll need to open a pull request. You 
 1. Fork and clone the repository.
 2. Create a directory in the `editorial` folder of the selected environment (`internal`/`external`) for your product page.
 4. Add your `product-name.md` file.
-5. Open a pull request adding **Megan Jackson** and **David Benson** as reviewers.
+5. Open a pull request adding **Megan Jackson** and **Justin Travis** as reviewers.
 6. Content will be revised and merged through discussion on the PR.

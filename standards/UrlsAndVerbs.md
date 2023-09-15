@@ -25,6 +25,8 @@ so no API on the same sub-domain that has multiple conventions.
 
 - API URLs **DO NOT REQUIRE** `api` in the URL (e.g `/account/123/cards` ✓ looks good, `/api/account/123/cards` not necessary)
 
+- You **SHOULD NOT** use version numbers in URLs (e.g. `/transactions` instead of `/v1/transactions`)
+
 ## Casing
 
 - ###  Path values must be lowercase, and hypenated

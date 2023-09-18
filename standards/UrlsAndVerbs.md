@@ -8,111 +8,117 @@
 - Use human readable URLs
 - Use pluralised entity names in URLs (/people/1 instead of /person/1)
 - Kebab case, and lowercase entity names in URLs (/collection-records instead of /collectionrecords)
+- Do not include `api` in URLs
 
 While a few of the above TL;DR decisions have subjective answers on either side, we should try to just pick one where possible to avoid yak shaving (especially when it comes to plural/singular entity names).
 
 ## Naming in Urls
 
-**You MUST must have consistency locally within your system for pluralisation**, so no API on the same sub-domain that has multiple conventions.
+- You **MUST** must have consistency locally within your system for pluralisation, 
+so no API on the same sub-domain that has multiple conventions.
 
-If you include the type in the variable name it must represent the underlaying type.
+- If you include the type in the variable name it **MUST** represent the underlaying type.
 
-**You MUST keep URLs verb free** (e.g. /accounts/123/getcards is incorrect, a HTTP GET to /account/123/cards is correct)
+- You **MUST** keep URLs verb free (e.g. `/accounts/123/getcards`` is incorrect, a HTTP GET to `/account/123/cards` is correct)
 
-**You SHOULD use pluralised entity names in URLs** (e.g. /people/1 instead of /person/1)
+- You **SHOULD** use pluralised entity names in URLs (e.g. `/people/1` instead of `/person/1`)
+
+- API URLs **DO NOT REQUIRE** `api` in the URL (e.g `/account/123/cards` ✓ looks good, `/api/account/123/cards` not necessary)
+
+- You **SHOULD NOT** use version numbers in URLs (e.g. `/transactions` instead of `/v1/transactions`)
 
 ## Casing
 
-### Path values must be lowercase, and hypenated
+- ###  Path values must be lowercase, and hypenated
 
-Examples:
+    Examples:
 
-    /collection-records/1
+        /collection-records/1
 
-    NOT
+        NOT
 
-    /CollectionRecords/1
-    /collectionRecords/1
+        /CollectionRecords/1
+        /collectionRecords/1
 
-### URL paths should be case insensitive
+- ### URL paths should be case insensitive
 
-Example:
+    Example:
 
-    /collection-records/1
-    /Collection-Records/1
-    /CoLlEcTiOn-ReCoRdS/1
+        /collection-records/1
+        /Collection-Records/1
+        /CoLlEcTiOn-ReCoRdS/1
 
-Are all the same route.
+    Are all the same route.
 
-### MUST use camelCase for query parameters
+- ### MUST use camelCase for query parameters
 
-Example: /collection-records?sortBy=Date
+    Example: `/collection-records?sortBy=Date`
 
 ## Headers
 
-### HTTP headers use Capitalized-Hyphenated-Terms
+- ### HTTP headers use Capitalized-Hyphenated-Terms
 
-Any HTTP headers are the exception and SHOULD use standard HTTP convention of Capitalized-Hyphenated-Terms.
+    Any HTTP headers are the exception and SHOULD use standard HTTP convention of Capitalized-Hyphenated-Terms.
 
-### MUST NOT use x-prefixed headers
+- ### MUST NOT use x-prefixed headers
 
-`x-prefixed` headers are not-recommended, and considered bad practice. We should not use `x-prefixed` headers.
+    `x-prefixed` headers are not-recommended, and considered bad practice. We should not use `x-prefixed` headers.
 
-If you want to use custom headers of your own design:
+    If you want to use custom headers of your own design:
 
-Example:
+    Example:
 
-    My-Custom-Header: My-Custom-Value
+        My-Custom-Header: My-Custom-Value
 
-    NOT
+        NOT
 
-    X-My-Custom-Header: My-Custom-Value
+        X-My-Custom-Header: My-Custom-Value
 
 ## Resource Design
 
-### Split resources where possible
+- ### Split resources where possible
 
-Multiple top level resources for aggregate roots are more useful to callers.
+    Multiple top level resources for aggregate roots are more useful to callers.
 
-Examples:
+    Examples:
 
-    /customers/5
-    /orders/23
+        /customers/5
+        /orders/23
 
-    instead of
+        instead of
 
-    /customers/5/orders/23
+        /customers/5/orders/23
 
-### Must Identify resources and sub-resources via path segments if sub-resources are not top-level resources
+- ### Must Identify resources and sub-resources via path segments if sub-resources are not top-level resources
 
-If sub-resources are required, use the path segments to indicate them.
+    If sub-resources are required, use the path segments to indicate them.
 
-Examples:
+    Examples:
 
-    /orders/2/items/1
+        /orders/2/items/1
 
-### Use summary objects or lists for collections of referenced resources
+- ### Use summary objects or lists for collections of referenced resources
 
-    /customers/1/orders -> returns summary of orders
-    /orders/1 -> returns full order objects
+        /customers/1/orders -> returns summary of orders
+        /orders/1 -> returns full order objects
 
-Summary objects MUST contain at least the URI of the full resource, and it's ID.
-Summary objects MAY contain other properties, but they MUST be consistent with the full resource.
+    Summary objects MUST contain at least the URI of the full resource, and it's ID.
+    Summary objects MAY contain other properties, but they MUST be consistent with the full resource.
 
-## HTTP Verbs and Methods
+- ## HTTP Verbs and Methods
 
-HTTP methods are frequently referred to as the HTTP verbs.
-The appropriate verbs should be used when creating the API.
+    HTTP methods are frequently referred to as the HTTP verbs.
+    The appropriate verbs should be used when creating the API.
 
-**The verb should not exist in the URI or another form of the verb** (e.g. no need to write “SAVE” in URI when the verb is a POST or PATCH).
+    **The verb should not exist in the URI or another form of the verb** (e.g. no need to write “SAVE” in URI when the verb is a POST or PATCH).
 
-The available verbs are listed in the RFC 261 specification in section 9.1.2.
+    The available verbs are listed in the RFC 261 specification in section 9.1.2.
 
-Operations MUST use the proper HTTP methods whenever possible, and operation idempotency MUST be respected.
+    Operations **MUST** use the proper HTTP methods whenever possible, and operation idempotency **MUST** be respected.
 
-Borrowed from [Microsoft REST API fundamentals](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#74-supported-methods), the following should be respected:
+    Borrowed from [Microsoft REST API fundamentals](https://github.com/microsoft/api-guidelines/blob/vNext/Guidelines.md#74-supported-methods), the following should be respected:
 
-For response/status codes see: [guidelines/StatusCodes.md](../guidelines/StatusCodes.md)
+    For response/status codes see: [guidelines/StatusCodes.md](../guidelines/StatusCodes.md)
 
 Method  | Description                                                                                                                | Is Idempotent
 ------- | -------------------------------------------------------------------------------------------------------------------------- | -------------

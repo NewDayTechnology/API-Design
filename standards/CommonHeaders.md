@@ -21,5 +21,5 @@ See [Versioning.md] for more details on this header.
 
 The `Client-Session-Id` header is used to track a client's session across multiple API requests. This unique identifier is essential for maintaining session consistency and is particularly useful in scenarios where stateful interactions are necessary. It enables the system to correlate requests to a specific user session, facilitating better analytics, security audits, and troubleshooting.
 Each client MUST generate a unique `Client-Session-Id` for every session, and consistently include it in the headers of all API requests made during that session.
-Each API MUST accept a `Client-Session-Id` header in every request, even when it is not needed for it's own processing, and pass it trough to any other API called.
+Each API MUST accept a `Client-Session-Id` header in every request, even when it is not needed for it's own processing, and pass it through to any other API called.
 The `Client-Session-Id` is NOT an authentication mechanism.

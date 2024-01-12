@@ -92,9 +92,9 @@ _This approach is in general not reccomended, however when required (e.g. there 
 
 Clients MAY use `$top` and `$skip` query parameters to specify a number of results to return and an offset into the collection.
 
-The server SHOULD honor the values specified by the client, but enforcing limits on page size to protect against denial-of-service attacks; however, clients MUST be prepared to handle responses that contain a smaller page size.
+The server SHOULD honour the values specified by the client, but enforcing limits on page size to protect against denial-of-service attacks; however, clients MUST be prepared to handle responses that contain a smaller page size.
 Essentialy, the server **SHOULD** handle `$top` as a contraint of maximum page size; it should try to honour the request, however  it MAY return less elements than the specified page size when appropriate.
 
 When both `$top` and `$skip` are given by a client, the server SHOULD first apply `$skip` and then `$top` on the collection.
 
-Note: If the server can't honor `$top` and/or `$skip`, the server MUST return an error to the client informing about it instead of just ignoring the query options. This will avoid the risk of the client making assumptions about the data returned.
+Note: If the server can't honour `$top` and/or `$skip`, the server MUST return an error to the client informing about it instead of just ignoring the query options. This will avoid the risk of the client making assumptions about the data returned.

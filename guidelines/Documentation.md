@@ -1,7 +1,7 @@
 # API Documentation Guidelines for the Developer Portal
 
 ---
-Note: For a full guide on uploading to the developer portal, use this link: https://newdaycards.atlassian.net/wiki/spaces/DD/pages/3318546799/Developer+Portal+Onboarding+Guide
+Note: For a full guide on uploading to the developer portal, use this link: https://internal-docs.newdaytechnology.net/tools-and-guides/onboarding-guide/
 Internal portal: https://internal-docs.newdaytechnology.net/
 
 External portal: https://docs.newdaytechnology.co.uk/

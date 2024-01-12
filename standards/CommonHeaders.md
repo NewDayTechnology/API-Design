@@ -12,10 +12,10 @@ The `Content-Type` header specifies the media type of the request or response pa
 
 The `Accept` header is used by the client to specify the media types it can handle in the response. It allows the server to send the response in the most appropriate format based on the client's preferences. This header is particularly useful when the API supports multiple response formats.
 
-## API-Version Header
+## Api-Version Header
 
-The `API-Version` header is used to indicate the version of the API being used. This header is important for managing backward compatibility and ensuring that clients can safely upgrade to newer versions of the API without breaking their existing integrations.
-See [Versioning.md] for more details on this header.
+The `Api-Version` header is used to indicate the version of the API being used. This header is important for managing backward compatibility and ensuring that clients can safely upgrade to newer versions of the API without breaking their existing integrations.
+See [Versioning](Versioning.md) for more details on this header.
 
 ## Client-Session-Id Header
 

@@ -16,7 +16,7 @@ This document is not meant to be exhaustive, and will likely change over time as
 
 - [API Design at NewDay](#api-design-at-newday)
   - [Contents](#contents)
-  - [Disclaimer & Intended Audience](#disclaimer-intended-audience)
+  - [Disclaimer & Intended Audience](#disclaimer--intended-audience)
   - [What is an API?](#what-is-an-api)
   - [Principles](#principles)
   - [API Standards](#api-standards)

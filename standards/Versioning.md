@@ -1,12 +1,10 @@
 # Versioning
 
----
-
-All our API’s should follow a versioning protocol and avoid minor versioning.
+All our API’s should follow a versioning protocol.
 
 Only major breaking changes should result in a new version, however, we expect developers to minimise the need for versioning by practicing good “addition” to API’s rather than creating a new version for every change. If items need to be made obsolete later it should be only removed when there is a major version change.
 
-All changes should be documented in the project “Change Log”.
+All changes should be documented in the project “Change Log” and each API should advestise its major and minor version.
 
 ## The Use of Version Numbers
 
@@ -15,14 +13,21 @@ All changes should be documented in the project “Change Log”.
 
 We support version numbers in the forms:
 
-- 1
-- 1.0
+- 1 for requests
+- 1.0 for responses and documentation
 
 We appreciate that this isn't the full breadth of semantic versioning, but more specificity is of no help to consuming clients in this context.
 
+## Version lifecycle
+
+When a new major version is released, previous version needs to be supported side by side.
+Multiple major versions of an API could be implemented either in the same codebase or on a separate one, as long as routing is performed to the appriopriate implementation based on the requested version, as per the [Versioning Standard](#versioning-standard) below.
+When creating a new major version of an API, take the opportunity to perform a full review of the API with the aim to include all  required breaking changes and minimize the chance of needing another major version soon after. If the API is also changing in purpose, consider publishing the new API under a new name, isntead of as a new major version of the existing API.
+
 ## Versioning Standard
 
-By default we should use the following version scheme:
+When calling an API, consumers should include in the request, the major version of the API version they want to use.
+The API should then include the major and minor version in the response.
 
 ### APIs should prefer header versioning
 
@@ -33,7 +38,9 @@ Example:
     Content-Type: application/json
     Api-Version: 1
 
-### If providing a header is impossible, we should use URI parameters
+### If handling a header is impossible, we should use URI parameters
+
+If environmental restrictions prevents consumers from working with custom headers, that API could support versioning via a query parameter.
 
 Example:
 
@@ -41,11 +48,11 @@ Example:
 
 The presence of a URI parameter is not a requirement, but will *supercede* the header versioning.
 
-## Omission of either a version header or a version parameter
+### Omission of either a version header or a version parameter
 
 Omission of either form of API version specification will presume the latest possible version. Combined with forwards compatibility, this should be considered client-safe, and version infinite.
 
-## Services that cannot ensure forwards compatibility
+### Services that cannot ensure forwards compatibility
 
 Services that cannot ensure URL path stability across future versions MUST embed the version in the URL path.
 
@@ -58,6 +65,17 @@ Example:
 This is a less-than-ideal-solution, but will be tolerated if confidence is low in forwards compatibility. Versioning in the path will lead to a messy looking public interface, but is the lesser of the evils when faced with a lack of backwards compatibility.
 
 Our APIs, when made avilable to partners, will be hosted under a *single API management portal*, and likely organised by root paths, so path based versioning is less than ideal.
+
+### APIs should advertise the version in the response
+
+Apis response should include the `Api-Version` header with the major and minor version of the api that has processed the request.
+
+Example:
+
+    HTTP/1.1 200 OK
+    Date: Thu, 04 Feb 2024 00:42:00 GMT
+    Content-Type: application/json
+    Api-Version: 1.3
 
 ## When not to Version
 

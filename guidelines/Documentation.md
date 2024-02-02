@@ -1,10 +1,11 @@
 # API Documentation Guidelines for the Developer Portal
 
 ---
-Note: For a full guide on uploading to the developer portal, use this link: https://internal-docs.newdaytechnology.net/tools-and-guides/onboarding-guide/
-Internal portal: https://internal-docs.newdaytechnology.net/
+Note: For a full guide on uploading to the developer portal, use this link: [internal-docs.newdaytechnology.net/tools-and-guides/onboarding-guide](https://internal-docs.newdaytechnology.net/tools-and-guides/onboarding-guide/)
 
-External portal: https://docs.newdaytechnology.co.uk/
+Internal portal: [internal-docs.newdaytechnology.net](https://internal-docs.newdaytechnology.net/)
+
+External portal: [docs.newdaytechnology.co.uk](https://docs.newdaytechnology.co.uk/)
 
 These are our guidelines for writing API documentation.
 It's important that our docs are **simple**, **easy to follow**, and **consistent**.
@@ -13,32 +14,26 @@ They must be suitable for both native and non-native English speakers.
 
 ## Table of Contents
 
-- [API Documentation Guidelines](#api-documentation-guidelines)
+- [API Documentation Guidelines](#api-documentation-guidelines-for-the-developer-portal)
   - [Required Documents](#required-documents)
   - [The User Guide Content](#the-user-guide-content)
     - [Writing Style](#writing-style)
   - [OpenAPI spec files](#openapi-spec-files)
   - [Document Publication Process](#document-publication-process)
-    - [Adding Publication Front Matter](#adding-publication-front-matter)
     - [Opening a PR to the Content Repository](#opening-a-pr-to-the-content-repository)
 
 ## Required Documents
 
-We require the following documents to be provided to the Developer Portal team:
-
-1. A **user-guide introduction**, written in `markdown`.
-2. An **Open API 3.0 spec file** describing your APIs.
-
-These two artifacts will be combined and ingested into the Developer Portal.
+All we require for you to publish your APIs in the Developer Portal is a **OpenAPI 3.0** or **AsyncAPI 2.0** file describing your APIs, with optional `mdx` content that can be deployed alongside the API.
 
 ## The User Guide Content
 
-This **introduction** should include the following:
+If you provide `mdx` content, it should present itself as an **introduction**, and should include the following:
 
 - What the API does
 - Who the intended users are
 - What scenarios you would use this API in
-- Any Prerequisites
+- Any prerequisites
 - Definition and/or explanation of terms which users may not be familiar with
 - Any useful diagrams:
   - **(Optional)** Sequence Diagram explaining any particular sequencing of API calls across multiple endpoints.
@@ -46,16 +41,11 @@ This **introduction** should include the following:
 
 You can (obviously!) include any additional information as applicable.
 
-Write the content in any editor that supports Markdown format. If you need additional guidance on Markdown, please refer to the [Markdown Cheatsheet](https://www.markdownguide.org/cheat-sheet).
+Currently, our recommendation is to use the [MDX Editor](https://internal-docs.newdaytechnology.net/mdx-preview/) we provide. For any additional guidance please use our [Markdown Guide](https://internal-docs.newdaytechnology.net/markdown-guide/) and our [Custom Components Guide](https://internal-docs.newdaytechnology.net/components-guide/).
 
-For a product page, please create a file in either internal/editorial or external/editorial, depending if your product is internal or external, with the following naming convention:
+### File Naming
 
-- Product: `product-name.md` e.g. `acquiring-new-customers.md`
-
-For an API overview page, please create a file in either internal/api/your-product-folder or external/api/your-product-folder, depending if your product is internal or external, with the following naming convention:
-
-- One API Overview: `index.md` 
-- Multiple API Overview pages (each endpoint requiring a page): `endpoint-name.md` e.g. `multi-quote.md`
+For product/editorial pages, please contant the Triumph team for support. For an API overview page, please create a file in either internal/api/your-product-folder or external/api/your-product-folder, depending if your product is internal or external, with at least one API Overview page (`index.mdx`), and, when applicable, multiple API Overview pages (`endpoint-name.mdx` e.g. `multi-quote.mdx`).
 
 ### Writing Style
 
@@ -102,61 +92,15 @@ When you are describing the parameters, you must include at least the parameter 
 
 **It is expected that you use language provided tooling to generate these OpenAPI specs from your code.**
 
+Note: Please refer to the [linting guide](https://internal-docs.newdaytechnology.net/tools-and-guides/linting-guide/) for additional information regarding API requirements.
+
 ## Document Publication Process
 
-Documentation publication relies on adding `front matter` to your `markdown` files. To add your teams `APIs` into the portal, you need to:
+Documentation publication relies on adding `front matter` to your `mdx` files. To add your teams `APIs` into the portal, you need to:
 
 1. Add the correct `Publication Front Matter`.
 2. Add values to the OpenAPI specification.
 3. Open a `PR` to the [Documentation Repository](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content) with your `markdown` and `Open API Spec` files.
-
-### Adding Publication Front Matter
-
-`Front Matter` is content that appears at the top of your `markdown` files in the form:
-
-```md
----
-some-bool: true
-some-string: "some value"
----
-# Regular Markdown Content Here
-
-This file contains front-matter
-```
-
-Our publication process requires two values:
-
-- `pub-ready` - This is a boolean value that indicates whether the `markdown` file is ready to be published. **true** will publish the content to the `UAT` environment, while **false** will publish to the `staging` environment.
-
-For a publicly accessible API, your `markdown` doc should look like this:
-
-```md
----
-pub-ready: true
----
-# Xyz API
-
-The `Xyz` API is a...
-```
-
-### Adding Values and Filters to OpenAPI Specification 
-
-APIs can now be filtered in the parsing logic using tags. The tags we currently have for internal and external can be found, [here](https://github.com/NewDayCards/NewDay.Docs.DevPortal.Content/blob/main/tags.json). If there is not a product or user type which you would put your API within, please edit and add the relevant tag to this file with your PR.
-
-Include the following in the OpenAPI specification:
-
-```JSON
-{
-  [ ... ]
-  "x-pub-settings": {
-    "pub-ready": "true",
-    "tags": [ "identity", "retailers"]
-  }
-  [ ... ]
-}
-```
-
-- If `pub-ready` is set to **true**, the file is published to the UAT environment. If **false**, will publish to the staging environment.
 
 ### Opening a PR to the Content Repository
 
@@ -165,41 +109,18 @@ It contains two folders that are of note, `internal` and `external`. Depending w
 
 Below is a representation of the folder structure of the repo:
 
-```
+```text
 .
 ├── internal
-│   ├── api                  # Internal API Content
-│   └── editorial            # External Editorial Content - Reserved for the Devportal team
+│   ├── api            # Internal API Content
+│   └── editorial      # External Editorial Content - Reserved for the Devportal team
 ├── external
-│   ├── api                  # External API Content
-│   └── editorial            # External Editorial Content - Reserved for the Devportal team
-├── resources                # Under Left Navbar Content - Reserved for the Devportal team
-└── footer                   # Footer Content - Reserved for the Devportal team
+│   ├── api            # External API Content
+│   └── editorial      # External Editorial Content - Reserved for the Devportal team
+├── resources          # Under Left Navbar Content - Reserved for the Devportal team
+└── footer             # Footer Content - Reserved for the Devportal team
 ```
 
-The following table represents the content visibility based on its variables:
+The `pub-ready` property in both MDX and spec files represents whether or not the content is ready to be published, i.e., if set to false it will only be published to the dev environment.
 
-|      |internal folder|external folder|  
-|------|------|-----
-|pub-ready: false| Internal dev/staging| Internal dev/staging<br>External dev/staging|
-|pub-ready: true| Internal dev/staging<br>Internal UAT/prod| Internal dev/staging<br>Internal UAT/prod<br>External dev/staging<br>External UAT/prod|
-
-### API or API Overview
-
-In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
-
-1. Fork and clone the repository.
-2. Create a directory in the `api` folder of the selected environment (`internal`/`external`) for your API.
-4. Add your `spec.json`/`index.md` file.
-5. Open a pull request (the appropriate reviewers will automatically be notified).
-6. Content will be revised and merged through discussion on the PR.
-
-### Product page
-
-In order to publish your documentation, you'll need to open a pull request. You need to add your content to a subdirectory of the `api` directory.
-
-1. Fork and clone the repository.
-2. Create a directory in the `editorial` folder of the selected environment (`internal`/`external`) for your product page.
-4. Add your `product-name.md` file.
-5. Open a pull request (the appropriate reviewers will automatically be notified).
-6. Content will be revised and merged through discussion on the PR.
+For further details, please refer to the [Onboarding Guide](https://internal-docs.newdaytechnology.net/tools-and-guides/onboarding-guide/).

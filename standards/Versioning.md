@@ -81,10 +81,12 @@ Example:
 
     Read: “How we aim to extend our APIs”.
 
+The following are example of minor changes. Minor changes requires to bump the minor version of the API and docuemtn the changes, but do not require to release a new major version side by side.
+
 - Adding new API resources
-- Adding new optional request parameters to existing API methods
-- Adding new properties to existing API responses
-- Changing the order of properties in existing API responses
+- Adding new optional request parameters or headers to existing API methods
+- Adding new properties or headers to existing API responses
+- Changing the order of properties or headers in existing API responses
 - Changing technology
 - Changing the length or format of opaque strings, such as object IDs, error messages, and other human-readable strings
 
@@ -98,10 +100,11 @@ Teams may define backwards compatibility as their business product line needs re
 
 Our guide on what broadly constitutes a breaking change is as follows:
 
-- Removing or renaming APIs or API parameters / arguments
-- Removing or renaming responses fields
+- Removing or renaming APIs or API parameters or headers
+- Removing or renaming responses fields or headers
 - Changes in behaviour for an existing API; including default parameter / argument behaviour
 - Changes in casing of property names, at any point in the object graph (:warning: beware if assigning objects directly based on responses from other services)
+- Changes in casing of headers
 - Changes in Error Codes
 
 Anything that would violate the *Principle of Least Astonishment*.

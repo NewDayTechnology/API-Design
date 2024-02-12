@@ -1,7 +1,5 @@
 # API Maturity Model
 
----
-
 ## Level 1
 
 Plain OLD XML or other weird API formats, zero-consistency from API to API, single endpoint API designs, chaos, incoherent response documents

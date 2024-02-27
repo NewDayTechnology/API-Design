@@ -138,7 +138,8 @@ Our guide on what broadly constitutes a breaking change is as follows:
 - Changes in behaviours for an existing API; including default parameter and argument behaviour
 - Changes in casing of property names, at any point in the object graph (:warning: beware if assigning objects directly based on responses from other services)
 - Changes in casing of headers
-- Changes in Error Codes
+- Changes in HTTP Status Codes
+- Changes in error responses
 
 Anything that would violate the *Principle of Least Astonishment*.
 

@@ -2,7 +2,7 @@
 
 All our APIs should follow a versioning protocol.
 
-Only major breaking changes should result in a new version. However, we expect developers to minimize the need for versioning by practicing good "addition" to APIs, rather than creating a new version for every change. If items need to be made obsolete later, they should only be removed when there is a major version change.
+Only major breaking changes should result in a new version. However, we expect developers to minimise the need for versioning by practising good "addition" to APIs, rather than creating a new version for every change. If items need to be made obsolete later, they should only be removed when there is a major version change.
 
 All changes should be documented in the project "Change Log", and each API should advertise its major and minor version.
 
@@ -135,14 +135,14 @@ Our guide on what broadly constitutes a breaking change is as follows:
 
 - Removing or renaming APIs or API parameters or headers
 - Removing or renaming response fields or headers
-- Changes in behavior for an existing API; including default parameter and argument behavior
+- Changes in behaviours for an existing API; including default parameter and argument behaviour
 - Changes in casing of property names, at any point in the object graph (:warning: beware if assigning objects directly based on responses from other services)
 - Changes in casing of headers
 - Changes in Error Codes
 
 Anything that would violate the *Principle of Least Astonishment*.
 
-**It is better to introduce a new API for these kinds of behavioral changes, then suffer the consequences of versioning the old API.**
+**It is better to introduce a new API for these kinds of behavioural changes, then suffer the consequences of versioning the old API.**
 
 ## FAQ on Header Versioning
 
@@ -152,7 +152,7 @@ Anything that would violate the *Principle of Least Astonishment*.
 
   1. In-application versioning - you can use the header inside of your application to route your requests in most common API frameworks. You can achieve this in ASP.NET Core.
 
-  2. Outside of application versioning using APIM - you can use APIM dynamic routing to route to multiple running applications or functions based on a version header.
+  2. Outside of application versioning using application gateways or load balancers - e.g. you can use APIM dynamic routing to route to multiple running applications or functions based on a version header.
 
 - **Objection**: It's harder to describe in an OpenAPI specification.
   

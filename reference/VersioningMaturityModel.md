@@ -18,8 +18,6 @@ Versioning is introduced through query parameters (e.g., `?version=1`) or includ
 
 ## Level 3: Header Versioning and Lifecycle Policy
 
-> **🎯Target**
-
 Versions are specified using HTTP headers. This approach offers flexibility and keeps URLs consistent and clean. Modern clients support headers, and API gateways and frameworks allow for routing based on headers without issues.
 
 Limit the number of major API versions as much as possible, preferring incremental changes to breaking changes.
@@ -29,6 +27,8 @@ Establish clear policies for version deprecation, providing ample notice to cons
 Ensure thorough testing for new versions and conduct backward compatibility checks to minimize disruptions.
 
 ### Level 4: Version Negotiation and Migration Guides
+
+> **🎯Target**
 
 The server dynamically determines the best version to serve based on the client's request, using content negotiation (e.g., `Accept: application/vnd.sample.v1+json`). This maximizes flexibility and allows for seamless transitions between versions for consumers. A consumer can specify multiple supported versions and express preferences via content negotiation.
 

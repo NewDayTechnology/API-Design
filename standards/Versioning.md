@@ -81,7 +81,7 @@ Example:
 
     Read: “How we aim to extend our APIs”.
 
-The following are example of minor changes. Minor changes requires to bump the minor version of the API and docuemtn the changes, but do not require to release a new major version side by side.
+The following are examples of minor changes. Minor changes require bumping the minor version of the API and documenting the changes, but do not require releasing a new major version side-by-side.
 
 - Adding new API resources
 - Adding new optional request parameters or headers to existing API methods

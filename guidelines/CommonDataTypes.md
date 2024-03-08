@@ -30,10 +30,10 @@ Examples
 }
 ```
 
-### Percentages
+### Percent values
 
 * Services **MUST** represent percentages as a number, where the number represents the decimal representation of the percentage. For example, `0.01` represents `1%`.
-* Services **SHOULD** provide a human-readable version of the percentage if they are responsible for driving User Interfaces. This value should be a string and include the `%` sign.
+* Services **MAY** provide a human-readable version of the percentage if they are responsible for driving User Interfaces. This value should be a string and include the `%` sign.
 
 Examples
 

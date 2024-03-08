@@ -8,3 +8,4 @@
 - Michael Meaney
 - David Whitney
 - Jessica Brentnall
+- Jamie Cohen

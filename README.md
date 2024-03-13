@@ -79,6 +79,14 @@ These are a set of recommendations for solving common problems in API design. We
 
 Please read the [Documentation Guidelines](guidelines/Documentation.md) to understand what is required for publishing your API in the portal.
 
+## References
+
+These are a set of references to the guiding principles of our API Design.
+
+- [Design Principles](reference/DesignPrinciples.md)
+- [API Maturity Model](reference/MaturityModel.md)
+- [Versioning Maturity Model](reference/VersioningMaturityModel.md)
+
 ## Contributing
 
 See the [contributing guidelines](.github/CONTRIBUTING.md).

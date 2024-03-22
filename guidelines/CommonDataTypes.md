@@ -33,7 +33,7 @@ Examples
 ### Percent values
 
 * Services **MUST** represent percentages as a number, where the number represents the decimal representation of the percentage. For example, `0.01` represents `1%`.
-* Services **SHOULD** provide a human-readable version of the percentage
+* Services **COULD** provide a human-readable version of the percentage, if appropriate in the context of the API, clearly identifying the field with a suffix (e.g. `Percentage`, `AsPercent`, `DisplayPercent`)
 
 Examples
 

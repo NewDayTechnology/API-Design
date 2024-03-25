@@ -30,6 +30,26 @@ Examples
 }
 ```
 
+### Percent values
+
+* Services **MUST** represent percentages as a number, where the number represents the decimal representation of the percentage. For example, `0.01` represents `1%`.
+* Services **COULD** provide a human-readable version of the percentage, if appropriate in the context of the API, clearly identifying the field with a suffix (e.g. `Percentage`, `AsPercent`, `DisplayPercent`)
+
+Examples
+
+```json
+{
+    "interestRate": 0.0143
+}
+```
+
+```json
+{
+    "subsidy": 0.02,
+    "subsidyPercentage": 2
+}
+```
+
 ### Variables in text from APIs
 
 Some APIs may present customer friendly strings of text that can be presented on the front end. These strings may have variable content within them from other parts of the API response.
@@ -56,7 +76,7 @@ Examples
     "timestamps": {
         "startAt": "2023-03-21T15:15:27+00:00",
         "expiryAt": "2023-03-22T01:10:00+00:00",
-        }
+    }
 }
 ```
 

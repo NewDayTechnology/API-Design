@@ -91,4 +91,4 @@ These are a set of references to the guiding principles of our API Design.
 
 See the [contributing guidelines](.github/CONTRIBUTING.md).
 
-[A list of authors and contributors is avilable here](AUTHORS.md).
+[A list of authors and contributors is available here](AUTHORS.md).
